@@ -7,7 +7,7 @@
 
 <style>
 :root{
---green:#0b8457;
+--green:#2563eb;
 --bg:#e7e7e7;
 --card:#f2f2f2;
 --text:#222;
@@ -168,94 +168,108 @@ onkeyup="searchErrors()">
 
 <div class="card error-card item" data-topic="Software">
 <h2>Erro 12</h2>
-<p><b>Tópico:</b> Problemas de Software</p>
-<p><b>Sintoma:</b> Token incorreto + Problemas de Comunicação</p>
-<p><b>Solução:</b> Realizar estímulo no cadastro, reset Dataware no TMS, provisionamento Salesforce, testar outro meio de comunicação, provisionar novo número de série e reiniciar o equipamento.</p>
+<p><b>Classificação:</b> Suporte ao Provedor de Serviços</p>
+<p><b>Tabulação:</b> Problemas de Software</p>
+<p><b>Status:</b> Orientado em Linha</p>
+<p><b>Motivo:</b> Data e hora incorretos na máquina.</p>
+<p><b>Ação:</b> Verificar data e horário do equipamento, realizar estímulo no cadastro, atualizar tabelas, corrigir data/hora e efetuar nova manutenção.</p>
 </div>
 
-<div class="card error-card item" data-topic="Software">
+<div class="card error-card item" data-topic="Comunicacao">
 <h2>Erro 28</h2>
-<p><b>Tópico:</b> Problemas de Software</p>
-<p><b>Sintoma:</b> Data e hora incorretos na máquina.</p>
-<p><b>Solução:</b> Orientar técnico ou cliente a corrigir a data e hora do equipamento.</p>
+<p><b>Classificação:</b> Suporte ao Provedor de Serviços</p>
+<p><b>Tabulação:</b> Problemas Comunicação</p>
+<p><b>Status:</b> Orientado em Linha</p>
+<p><b>Motivo:</b> Tecnologia GPRS/WIFI descontinuada.</p>
+<p><b>Ação:</b> Solicitar nova OS na tecnologia PGW e orientar o técnico a seguir com a ativação.</p>
 </div>
 
-<div class="card error-card item" data-topic="Hardware">
+<div class="card error-card item" data-topic="Terminal">
 <h2>Erro 29</h2>
-<p><b>Tópico:</b> Problemas de Hardware</p>
-<p><b>Sintoma:</b> Tecnologia GPRS/WIFI descontinuada.</p>
-<p><b>Solução:</b> Solicitar substituição do equipamento ou encaminhar para retenção.</p>
+<p><b>Classificação:</b> Suporte ao Provedor de Serviços</p>
+<p><b>Tabulação:</b> Terminal Não Autorizado ou Cadastrado - Erro 29</p>
+<p><b>Motivo:</b> POS atrelado a outro estabelecimento ou nunca cadastrado.</p>
+<p><b>Ação:</b> Reagendar a OS e coletar o número de série correto. Caso o técnico esteja na base, orientar a troca do POS sem reagendamento.</p>
 </div>
 
-<div class="card error-card item" data-topic="Software">
+<div class="card error-card item" data-topic="Terminal">
 <h2>Erro 31</h2>
-<p><b>Tópico:</b> Terminal Não Autorizado</p>
-<p><b>Sintoma:</b> POS associado a outro estabelecimento ou nunca cadastrada.</p>
-<p><b>Solução:</b> Reagendar OS ou efetuar reset de fábrica quando aplicável.</p>
+<p><b>Classificação:</b> Suporte ao Provedor de Serviços</p>
+<p><b>Tabulação:</b> Terminal Não Autorizado ou Cadastrado - Técnico de Campo</p>
+<p><b>Motivo:</b> Informação digitada incorretamente, OS cancelada/concluída ou tipo de OS incorreto.</p>
+<p><b>Ação:</b> Refazer pré-ativação. Se necessário, desatrelar terminal no TMS e repetir a ativação.</p>
 </div>
 
-<div class="card error-card item" data-topic="Software">
+<div class="card error-card item" data-topic="Autorizacao">
 <h2>Erro 32</h2>
-<p><b>Tópico:</b> Terminal Não Autorizado ou Cadastrado</p>
-<p><b>Sintoma:</b> Informação digitada incorretamente pelo técnico.</p>
-<p><b>Solução:</b> Validar CPF, CNPJ, ticket e informações inseridas durante a ativação.</p>
+<p><b>Classificação:</b> Suporte ao Provedor de Serviços</p>
+<p><b>Tabulação:</b> Autorização</p>
+<p><b>Status:</b> Liberação Ticket</p>
+<p><b>Motivo:</b> OS vencida.</p>
+<p><b>Ação:</b> Liberar Ticket.</p>
 </div>
 
 <div class="card error-card item" data-topic="Software">
 <h2>Erro 35</h2>
-<p><b>Tópico:</b> Autorização</p>
-<p><b>Sintoma:</b> OS vencida.</p>
-<p><b>Solução:</b> Liberar Ticket para continuidade da instalação.</p>
+<p><b>Classificação:</b> Suporte ao Provedor de Serviços</p>
+<p><b>Tabulação:</b> Problemas Software</p>
+<p><b>Status:</b> Orientado em Linha</p>
+<p><b>Motivo:</b> Existe OS de manutenção e desinstalação para a mesma POS.</p>
+<p><b>Ação:</b> Verificar OS de desinstalação aberta. Cancelar manutenção quando aplicável. Caso contrário seguir fluxo do erro 824.</p>
 </div>
 
 <div class="card error-card item" data-topic="Software">
 <h2>Erro 41</h2>
-<p><b>Tópico:</b> Problemas de Software</p>
-<p><b>Sintoma:</b> Existe OS de manutenção e desinstalação para mesma POS.</p>
-<p><b>Solução:</b> Cancelar a OS incorreta, validar desinstalação pendente e seguir orientação do processo.</p>
+<p><b>Classificação:</b> Suporte ao Provedor de Serviços</p>
+<p><b>Tabulação:</b> Problemas Software</p>
+<p><b>Status:</b> Orientado em Linha</p>
+<p><b>Motivo:</b> CPF do técnico inválido.</p>
+<p><b>Ação:</b> Orientar o técnico a informar o CPF correto. Caso esteja correto, procurar a base.</p>
 </div>
 
 <div class="card error-card item" data-topic="Software">
 <h2>Erro 43</h2>
-<p><b>Tópico:</b> Problemas de Software</p>
-<p><b>Sintoma:</b> CPF do técnico inválido.</p>
-<p><b>Solução:</b> Confirmar CPF informado. Caso esteja correto, orientar técnico a procurar sua base.</p>
+<p><b>Classificação:</b> Suporte ao Provedor de Serviços</p>
+<p><b>Tabulação:</b> Problemas Software</p>
+<p><b>Status:</b> Orientado em Linha</p>
+<p><b>Motivo:</b> POS não corresponde ao projeto.</p>
+<p><b>Ação:</b> Se estiver com equipamento incorreto, retornar à base. Caso esteja correto, coletar a série e reagendar OS.</p>
 </div>
 
-<div class="card error-card item" data-topic="Hardware">
+<div class="card error-card item" data-topic="Software">
 <h2>Erro 44</h2>
-<p><b>Tópico:</b> Problemas de Hardware</p>
-<p><b>Sintoma:</b> POS não corresponde ao projeto.</p>
-<p><b>Solução:</b> Reagendar OS e orientar o técnico a substituir o equipamento.</p>
+<p><b>Classificação:</b> Suporte ao Provedor de Serviços</p>
+<p><b>Tabulação:</b> Problemas Software</p>
+<p><b>Status:</b> Orientado em Linha</p>
+<p><b>Motivo:</b> CPF ou CNPJ divergente do cadastro.</p>
+<p><b>Ação:</b> Validar dados cadastrais. Se apenas o CNPJ estiver divergente, cancelar a OS e orientar atualização cadastral.</p>
 </div>
 
 <div class="card error-card item" data-topic="Comunicacao">
 <h2>Erro 824</h2>
-<p><b>Tópico:</b> Problemas de Comunicação</p>
-<p><b>Sintoma:</b> Falha de comunicação durante instalação.</p>
-<p><b>Solução:</b> Reset Dataware, estímulo cadastro, provisionamento Salesforce, testar Wi‑Fi/Dados móveis e reiniciar equipamento.</p>
+<p><b>Classificação:</b> Suporte ao Provedor de Serviços</p>
+<p><b>Tabulação:</b> Problemas Comunicação</p>
+<p><b>Status:</b> Orientado em Linha</p>
+<p><b>Motivo:</b> Problemas de comunicação.</p>
+<p><b>Ação:</b> Verificar chip no LYRA, realizar estímulo no cadastro, reset Dataware, testar outro meio de comunicação e utilizar Wi‑Fi quando necessário.</p>
 </div>
 
 <div class="card error-card item" data-topic="Comunicacao">
 <h2>Erro 837</h2>
-<p><b>Tópico:</b> Problemas de Comunicação</p>
-<p><b>Sintoma:</b> Problemas de comunicação.</p>
-<p><b>Solução:</b> Aplicar os mesmos procedimentos do erro 824.</p>
+<p><b>Classificação:</b> Suporte ao Provedor de Serviços</p>
+<p><b>Tabulação:</b> Problemas Comunicação</p>
+<p><b>Status:</b> Orientado em Linha</p>
+<p><b>Motivo:</b> Problemas de comunicação.</p>
+<p><b>Ação:</b> Aplicar os mesmos procedimentos do erro 824.</p>
 </div>
 
-<div class="card error-card item" data-topic="Hardware">
+<div class="card error-card item" data-topic="Comunicacao">
 <h2>Erro E2</h2>
-<p><b>Tópico:</b> Problemas de Hardware</p>
-<p><b>Sintoma:</b> Tecnologia GPRS/WIFI descontinuada.</p>
-<p><b>Solução:</b> Solicitar equipamento atualizado ou transferir para retenção.</p>
-</div>
-
-</div>
-
-<div class="footer">
-<b>Desenvolvido por:</b> Fernando de Melo Ravasi<br>
-<b>Base:</b> Terminal Não Autorizado ou Cadastrado<br>
-<b>©</b> Material de Apoio Interno Fiserv
+<p><b>Classificação:</b> Suporte ao Provedor de Serviços</p>
+<p><b>Tabulação:</b> Problemas Comunicação</p>
+<p><b>Status:</b> Orientado em Linha</p>
+<p><b>Motivo:</b> Tecnologia divergente da solicitada.</p>
+<p><b>Ação:</b> Validar o número lógico da OS, conferir a tecnologia correta e reagendar troca da máquina quando necessário.</p>
 </div>
 
 </div>
