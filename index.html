@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="vewport" content="width=device-width, initial-scale=1.0">
+<title>Terminal Não Autorizado ou Cadastrado</title>
+
+<style>
+:root{
+--green:#0b8457;
+--bg:#e7e7e7;
+--card:#f2f2f2;
+--text:#222;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,sans-serif;
+}
+
+body{
+display:flex;
+height:100vh;
+background:var(--bg);
+color:var(--text);
+transition:.4s;
+}
+
+.sidebar{
+width:290px;
+background:var(--green);
+padding:16px;
+display:flex;
+flex-direction:column;
+overflow:auto;
+}
+
+.logo{
+background:#f2f2f2;
+border-radius:8px;
+padding:10px;
+text-align:center;
+color:var(--green);
+font-size:30px;
+font-weight:700;
+}
+
+.title{
+color:#fff;
+text-align:center;
+font-size:20px;
+font-weight:700;
+margin:15px 0 20px;
+}
+
+.menu-btn,.theme-btn{
+padding:12px;
+border:none;
+border-radius:8px;
+margin-bottom:10px;
+cursor:pointer;
+background:#f2f2f2;
+transition:.2s;
+}
+
+.menu-btn:hover,
+.theme-btn:hover{
+transform:translateX(4px);
+}
+
+.theme-btn{
+margin-top:auto;
+}
+
+.main{
+flex:1;
+padding:18px;
+overflow:auto;
+}
+
+.card{
+background:var(--card);
+padding:16px;
+border-radius:12px;
+margin-bottom:12px;
+}
+
+.error-card{
+border-left:6px solid var(--green);
+}
+
+.search{
+width:100%;
+padding:12px;
+border-radius:8px;
+border:1px solid #bbb;
+margin-bottom:12px;
+}
+
+.dark{
+--bg:#121212;
+--card:#1f1f1f;
+--text:#f0f0f0;
+}
+
+.footer{
+background:var(--card);
+padding:14px;
+border-radius:8px;
+margin-top:20px;
+}
+
+h2{
+margin-bottom:8px;
+}
+
+p{
+margin:4px 0;
+line-height:1.5;
+}
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<div class="logo">Fiserv</div>
+
+<div class="title">
+Terminal Não Autorizado<br>
+ou Cadastrado
+</div>
+
+<button class="menu-btn" onclick="filterTopic('Software')">Problemas de Software</button>
+<button class="menu-btn" onclick="filterTopic('Hardware')">Problemas de Hardware</button>
+<button class="menu-btn" onclick="filterTopic('Comunicacao')">Problemas de Comunicação</button>
+<button class="menu-btn" onclick="showAll()">Todos os Erros</button>
+
+<button class="theme-btn" onclick="toggleTheme()">🌙 Alternar Tema</button>
+
+</div>
+
+<div class="main">
+
+<div class="card">
+<b>🏠 Home > Procedimentos > Terminal Não Autorizado ou Cadastrado</b>
+</div>
+
+<div class="card">
+<h2>📌 Resumo</h2>
+<p>
+Este material reúne os principais cenários relacionados aos erros de Terminal Não Autorizado ou Cadastrado,
+incluindo problemas de OS vencida, CPF inválido, equipamento incorreto,
+terminal associado a outro estabelecimento, erros de comunicação e falhas de ativação.
+</p>
+</div>
+
+<input
+class="search"
+id="search"
+placeholder="Pesquisar código, sintoma ou solução..."
+onkeyup="searchErrors()">
+
+<div id="errors">
+
+<div class="card error-card item" data-topic="Software">
+<h2>Erro 12</h2>
+<p><b>Tópico:</b> Problemas de Software</p>
+<p><b>Sintoma:</b> Token incorreto + Problemas de Comunicação</p>
+<p><b>Solução:</b> Realizar estímulo no cadastro, reset Dataware no TMS, provisionamento Salesforce, testar outro meio de comunicação, provisionar novo número de série e reiniciar o equipamento.</p>
+</div>
+
+<div class="card error-card item" data-topic="Software">
+<h2>Erro 28</h2>
+<p><b>Tópico:</b> Problemas de Software</p>
+<p><b>Sintoma:</b> Data e hora incorretos na máquina.</p>
+<p><b>Solução:</b> Orientar técnico ou cliente a corrigir a data e hora do equipamento.</p>
+</div>
+
+<div class="card error-card item" data-topic="Hardware">
+<h2>Erro 29</h2>
+<p><b>Tópico:</b> Problemas de Hardware</p>
+<p><b>Sintoma:</b> Tecnologia GPRS/WIFI descontinuada.</p>
+<p><b>Solução:</b> Solicitar substituição do equipamento ou encaminhar para retenção.</p>
+</div>
+
+<div class="card error-card item" data-topic="Software">
+<h2>Erro 31</h2>
+<p><b>Tópico:</b> Terminal Não Autorizado</p>
+<p><b>Sintoma:</b> POS associado a outro estabelecimento ou nunca cadastrada.</p>
+<p><b>Solução:</b> Reagendar OS ou efetuar reset de fábrica quando aplicável.</p>
+</div>
+
+<div class="card error-card item" data-topic="Software">
+<h2>Erro 32</h2>
+<p><b>Tópico:</b> Terminal Não Autorizado ou Cadastrado</p>
+<p><b>Sintoma:</b> Informação digitada incorretamente pelo técnico.</p>
+<p><b>Solução:</b> Validar CPF, CNPJ, ticket e informações inseridas durante a ativação.</p>
+</div>
+
+<div class="card error-card item" data-topic="Software">
+<h2>Erro 35</h2>
+<p><b>Tópico:</b> Autorização</p>
+<p><b>Sintoma:</b> OS vencida.</p>
+<p><b>Solução:</b> Liberar Ticket para continuidade da instalação.</p>
+</div>
+
+<div class="card error-card item" data-topic="Software">
+<h2>Erro 41</h2>
+<p><b>Tópico:</b> Problemas de Software</p>
+<p><b>Sintoma:</b> Existe OS de manutenção e desinstalação para mesma POS.</p>
+<p><b>Solução:</b> Cancelar a OS incorreta, validar desinstalação pendente e seguir orientação do processo.</p>
+</div>
+
+<div class="card error-card item" data-topic="Software">
+<h2>Erro 43</h2>
+<p><b>Tópico:</b> Problemas de Software</p>
+<p><b>Sintoma:</b> CPF do técnico inválido.</p>
+<p><b>Solução:</b> Confirmar CPF informado. Caso esteja correto, orientar técnico a procurar sua base.</p>
+</div>
+
+<div class="card error-card item" data-topic="Hardware">
+<h2>Erro 44</h2>
+<p><b>Tópico:</b> Problemas de Hardware</p>
+<p><b>Sintoma:</b> POS não corresponde ao projeto.</p>
+<p><b>Solução:</b> Reagendar OS e orientar o técnico a substituir o equipamento.</p>
+</div>
+
+<div class="card error-card item" data-topic="Comunicacao">
+<h2>Erro 824</h2>
+<p><b>Tópico:</b> Problemas de Comunicação</p>
+<p><b>Sintoma:</b> Falha de comunicação durante instalação.</p>
+<p><b>Solução:</b> Reset Dataware, estímulo cadastro, provisionamento Salesforce, testar Wi‑Fi/Dados móveis e reiniciar equipamento.</p>
+</div>
+
+<div class="card error-card item" data-topic="Comunicacao">
+<h2>Erro 837</h2>
+<p><b>Tópico:</b> Problemas de Comunicação</p>
+<p><b>Sintoma:</b> Problemas de comunicação.</p>
+<p><b>Solução:</b> Aplicar os mesmos procedimentos do erro 824.</p>
+</div>
+
+<div class="card error-card item" data-topic="Hardware">
+<h2>Erro E2</h2>
+<p><b>Tópico:</b> Problemas de Hardware</p>
+<p><b>Sintoma:</b> Tecnologia GPRS/WIFI descontinuada.</p>
+<p><b>Solução:</b> Solicitar equipamento atualizado ou transferir para retenção.</p>
+</div>
+
+</div>
+
+<div class="footer">
+<b>Desenvolvido por:</b> Fernando de Melo Ravasi<br>
+<b>Base:</b> Terminal Não Autorizado ou Cadastrado<br>
+<b>©</b> Material de Apoio Interno Fiserv
+</div>
+
+</div>
+
+<script>
+
+function toggleTheme(){
+document.body.classList.toggle('dark');
+}
+
+function filterTopic(topic){
+document.querySelectorAll('.item').forEach(el=>{
+el.style.display=(el.dataset.topic===topic)?'block':'none';
+});
+}
+
+function showAll(){
+document.querySelectorAll('.item').forEach(el=>{
+el.style.display='block';
+});
+}
+
+function searchErrors(){
+let value=document.getElementById('search').value.toLowerCase();
+
+document.querySelectorAll('.item').forEach(card=>{
+card.style.display=
+card.innerText.toLowerCase().includes(value)
+? 'block'
+: 'none';
+});
+}
+
+</script>
+
+</body>
+</html>
